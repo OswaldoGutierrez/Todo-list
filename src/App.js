@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://og-todo-api.herokuapp.com/todos")
+    fetch("https://og-todo-api.herokuapp.com/todos")
       .then(response => response.json())
       .then(data => this.setState({ todos: data }));
   }
@@ -38,7 +38,7 @@ class App extends React.Component {
 
   addTodo = event => {
     event.preventDefault();
-    fetch("http://og-todo-api.herokuapp.com/todo", {
+    fetch("https://og-todo-api.herokuapp.com/todo", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
@@ -56,7 +56,7 @@ class App extends React.Component {
   };
 
   deleteTodo = id => {
-    fetch(`http://og-todo-api.herokuapp.com/todo/${id}`, {
+    fetch(`https://og-todo-api.herokuapp.com/todo/${id}`, {
       method: "DELETE"
     }).then(
       this.setState({

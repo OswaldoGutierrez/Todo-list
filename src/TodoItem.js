@@ -10,7 +10,7 @@ class TodoItem extends React.Component {
   }
 
   toggleDone = () => {
-    fetch(`http://og-todo-api.herokuapp.com/todo/${this.props.id}`, {
+    fetch(`https://og-todo-api.herokuapp.com/todo/${this.props.id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
